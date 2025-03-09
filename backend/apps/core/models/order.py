@@ -9,7 +9,7 @@ class Order(BaseModel):
         app_label = "core"
         db_table = "order"
 
-    order_number = models.CharField(max_length=256, unique=True)
+    order_number = models.CharField(max_length=6, unique=True)
     customer_name = models.CharField(max_length=256)
 
     def save(self, *args, **kwargs):
