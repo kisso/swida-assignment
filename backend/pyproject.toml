@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["Kryštof Kiss <krystof.kiss@gmail.com.sk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^5.1.7"
+django_api_forms = "1.0.0rc9"
+pydantic = "^2.9"
+django-filter = "^25.1"
+
+[tool.poetry.dev-dependencies]
+black = "^25.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 119
