@@ -1,0 +1,98 @@
+[
+  {
+    "model": "core.waypoint",
+    "pk": "d1a1c72f-9b37-4a92-90fc-4316c47e5c11",
+    "fields": {
+      "order": "9f000d11-be11-4e2c-8069-24775bb4edcf",
+      "address": "Bratislava, Slovakia",
+      "waypoint_type": "pickup",
+      "sequence": 1,
+      "created_at": "2025-03-10T09:00:00Z",
+      "updated_at": "2025-03-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.waypoint",
+    "pk": "9e7365b4-4c71-4c7e-b5c5-73b4b6d2e7ab",
+    "fields": {
+      "order": "9f000d11-be11-4e2c-8069-24775bb4edcf",
+      "address": "Nitra, Slovakia",
+      "waypoint_type": "delivery",
+      "sequence": 2,
+      "created_at": "2025-03-10T09:00:00Z",
+      "updated_at": "2025-03-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.waypoint",
+    "pk": "7d678a6e-3d3d-4f2a-a93b-964b0c66d4f1",
+    "fields": {
+      "order": "4b2a1d3c-62b7-4f9b-99b1-64e0b7fdfc0a",
+      "address": "Kosice, Slovakia",
+      "waypoint_type": "pickup",
+      "sequence": 1,
+      "created_at": "2025-03-10T09:00:00Z",
+      "updated_at": "2025-03-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.waypoint",
+    "pk": "1fdf7997-c48f-4b61-b6f4-5d6bbf5dc5c7",
+    "fields": {
+      "order": "4b2a1d3c-62b7-4f9b-99b1-64e0b7fdfc0a",
+      "address": "Presov, Slovakia",
+      "waypoint_type": "delivery",
+      "sequence": 2,
+      "created_at": "2025-03-10T09:00:00Z",
+      "updated_at": "2025-03-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.waypoint",
+    "pk": "8e8c4c39-6b72-47f2-b2dc-47c0a1fa5b6c",
+    "fields": {
+      "order": "12c9fbe4-d2ab-4fd4-b3eb-3ad239b10df6",
+      "address": "Zilina, Slovakia",
+      "waypoint_type": "pickup",
+      "sequence": 1,
+      "created_at": "2025-03-10T09:00:00Z",
+      "updated_at": "2025-03-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.waypoint",
+    "pk": "32e94b37-55ef-4d50-91df-9164769136bf",
+    "fields": {
+      "order": "12c9fbe4-d2ab-4fd4-b3eb-3ad239b10df6",
+      "address": "Trnava, Slovakia",
+      "waypoint_type": "delivery",
+      "sequence": 2,
+      "created_at": "2025-03-10T09:00:00Z",
+      "updated_at": "2025-03-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.waypoint",
+    "pk": "f05d3f58-3d76-4a26-8ad3-291d729ed4c5",
+    "fields": {
+      "order": "f92a3de7-1636-4c60-86a1-4c30534ea3ef",
+      "address": "Banska Bystrica, Slovakia",
+      "waypoint_type": "pickup",
+      "sequence": 1,
+      "created_at": "2025-03-10T09:00:00Z",
+      "updated_at": "2025-03-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "core.waypoint",
+    "pk": "4f2bb80d-bd76-4a22-82a6-b45276db4238",
+    "fields": {
+      "order": "f92a3de7-1636-4c60-86a1-4c30534ea3ef",
+      "address": "Martin, Slovakia",
+      "waypoint_type": "delivery",
+      "sequence": 2,
+      "created_at": "2025-03-10T09:00:00Z",
+      "updated_at": "2025-03-10T09:00:00Z"
+    }
+  }
+]
