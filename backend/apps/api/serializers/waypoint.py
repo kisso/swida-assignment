@@ -1,4 +1,3 @@
-from datetime import datetime
 from uuid import UUID
 
 from apps.api.serializers import Serializer
@@ -11,7 +10,6 @@ class WaypointSerializer:
         address: str
         waypoint_type: Waypoint.WaypointType
         sequence: int
-        date: datetime
 
     class Detail(Base):
         pass
