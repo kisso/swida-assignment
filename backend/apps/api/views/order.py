@@ -28,7 +28,9 @@ class OrderManagement(View):
         return SingleResponse(request, OrderSerializer.Base.model_validate(order), status=HTTPStatus.CREATED)
 
     def get(self, request):
-        orders = OrderFilter(request.GET, queryset=Order.objects.all(), request=request).qs
+        orders = OrderFilter(
+            request.GET, queryset=Order.objects.all().prefetch_related("waypoints"), request=request
+        ).qs
 
         return PaginationResponse(request, orders, serializer=OrderSerializer.Base)
 
@@ -46,7 +48,7 @@ class OrderDetail(View):
     def get(self, request, order_id: UUID):
         order = self.get_order(request, order_id)
 
-        return SingleResponse(request, OrderSerializer.Detail.model_validate(order))
+        return SingleResponse(request, OrderSerializer.Base.model_validate(order))
 
     @transaction.atomic
     def delete(self, request, order_id: UUID):

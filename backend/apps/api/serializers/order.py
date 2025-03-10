@@ -15,8 +15,6 @@ class OrderSerializer:
         order_number: str
         customer_name: str
         date: datetime
-
-    class Detail(Base):
         waypoints: List[WaypointSerializer.Base] = Field(default=[], validate_default=True)
 
         @field_validator("waypoints", mode="before")
