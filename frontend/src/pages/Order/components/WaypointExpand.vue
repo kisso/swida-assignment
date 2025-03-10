@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import type { Order } from '@/pages/Order/data/models.ts'
+import WaypointForm from '@/pages/Order/components/WaypointForm.vue'
 
 const props = defineProps<{ order: Order }>()
 </script>
 
 <template>
-  <button class="bg-green-500 text-white px-4 py-1 rounded mb-2">Add Waypoint</button>
+  <WaypointForm :order="props.order" />
   <table class="w-full bg-gray-200">
     <thead>
       <tr class="border border-black">

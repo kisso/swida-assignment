@@ -71,7 +71,6 @@ const closeModal = () => {
         <div class="mb-4">
           <label for="customer_name" class="block text-gray-700">Customer Name</label>
           <input
-            ref="customer-name-input"
             v-model="customerName"
             id="customer_name"
             type="text"

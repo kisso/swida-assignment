@@ -7,6 +7,11 @@ export interface Waypoint {
   created_at: string
 }
 
+export interface WaypointDTO {
+  address: string
+  waypoint_type: string
+}
+
 export interface Order {
   id: string
   order_number: string
