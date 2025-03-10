@@ -7,6 +7,7 @@ import { useOrder } from '@/pages/Order/hooks/userOrder.ts'
 import VueDatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
 import { formattedDate } from '@/utils.ts'
+import WaypointExpand from '@/pages/Order/components/WaypointExpand.vue'
 
 // Filtering
 const searchInput = ref('')
@@ -46,6 +47,12 @@ const {
   error: orderError,
   refetch: refetchData,
 } = useOrder(searchQuery, dateQuery)
+
+// Expanding
+const expandedRows = ref<Record<string, boolean>>({})
+const toggleRow = (id: string) => {
+  expandedRows.value[id] = !expandedRows.value[id]
+}
 
 // Modals
 const showDeletionModal = ref(false)
@@ -115,11 +122,24 @@ const openDeleteModal = (order: Order) => {
                 <td class="px-4 py-2 text-center">{{ order.customer_name }}</td>
                 <td class="flex flex-row justify-center gap-2 px-4 py-2 text-center">
                   <button
+                    class="bg-blue-500 text-white px-4 py-1 rounded"
+                    @click="toggleRow(order.id)"
+                  >
+                    {{ expandedRows[order.id] ? 'H' : 'E' }}
+                  </button>
+                  <button
                     class="bg-red-500 text-white px-4 py-1 rounded"
                     @click="openDeleteModal(order)"
                   >
                     D
                   </button>
+                </td>
+              </tr>
+
+              <!-- Waypoints -->
+              <tr v-if="expandedRows[order.id]">
+                <td colspan="4" class="p-2">
+                  <WaypointExpand :order="order" />
                 </td>
               </tr>
             </template>
