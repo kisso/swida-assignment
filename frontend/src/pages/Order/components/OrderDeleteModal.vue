@@ -22,12 +22,16 @@ const handleDelete = () => {
     deleteMutation.mutate(props.selectedOrder.id)
   }
 }
+
+const closeModal = () => {
+  showDeletionModal.value = false
+}
 </script>
 
 <template>
   <div
     v-if="showDeletionModal"
-    class="fixed inset-0 flex items-center justify-center bg-gray-200/90"
+    class="fixed inset-0 flex items-center justify-center bg-gray-200/90 z-9999"
   >
     <div class="bg-white p-6 border rounded shadow-lg w-96">
       <h2 class="text-lg font-semibold mb-4">
@@ -36,7 +40,13 @@ const handleDelete = () => {
 
       <form @submit.prevent="handleDelete">
         <div class="flex justify-end gap-2">
-          <button type="button" class="bg-gray-400 text-white px-4 py-2 rounded">Cancel</button>
+          <button
+            type="button"
+            class="bg-gray-400 text-white px-4 py-2 rounded"
+            @click="closeModal"
+          >
+            Cancel
+          </button>
           <button
             type="submit"
             class="bg-red-500 text-white px-4 py-2 rounded"
