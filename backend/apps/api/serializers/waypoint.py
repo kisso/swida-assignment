@@ -12,7 +12,6 @@ class WaypointSerializer:
         waypoint_type: Waypoint.WaypointType
         sequence: int
         date: datetime
-        created_at: datetime
 
     class Detail(Base):
         pass

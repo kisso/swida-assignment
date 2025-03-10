@@ -14,7 +14,7 @@ class OrderSerializer:
         id: UUID
         order_number: str
         customer_name: str
-        created_at: datetime
+        date: datetime
 
     class Detail(Base):
         waypoints: List[WaypointSerializer.Base] = Field(default=[], validate_default=True)

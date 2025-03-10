@@ -11,6 +11,7 @@ class Order(BaseModel):
 
     order_number = models.CharField(max_length=6, unique=True)
     customer_name = models.CharField(max_length=256)
+    date = models.DateTimeField()
 
     def save(self, *args, **kwargs):
         if self._state.adding:

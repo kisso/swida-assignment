@@ -8,4 +8,3 @@ class WaypointForm:
     class Create(Form):
         address = fields.CharField(required=True)
         waypoint_type = EnumField(enum=Waypoint.WaypointType, required=True)
-        date = fields.DateTimeField(required=True)

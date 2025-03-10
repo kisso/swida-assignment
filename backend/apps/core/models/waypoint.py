@@ -16,7 +16,6 @@ class Waypoint(BaseModel):
     order = models.ForeignKey("Order", on_delete=models.CASCADE, related_name="waypoints")
     address = models.CharField(max_length=256)
     waypoint_type = models.CharField(max_length=8, choices=WaypointType.choices)
-    date = models.DateTimeField()
     sequence = models.IntegerField()
 
     def save(self, *args, **kwargs):
