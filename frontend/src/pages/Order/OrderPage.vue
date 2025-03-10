@@ -9,16 +9,43 @@ import '@vuepic/vue-datepicker/dist/main.css'
 import { formattedDate } from '@/utils.ts'
 
 // Filtering
+const searchInput = ref('')
+const dateInput = ref('')
+
 const searchQuery = ref('')
-const dateFilter = ref('')
+const dateQuery = ref('')
+
+const handleDateChange = (date: Date | null) => {
+  if (date) {
+    // Convert to YYYY-MM-DD format
+    dateInput.value = date.toISOString().split('T')[0]
+  } else {
+    dateInput.value = ''
+  }
+}
+
+const applyFilter = () => {
+  searchQuery.value = searchInput.value
+  dateQuery.value = dateInput.value
+  console.log(searchQuery.value)
+  refetchData()
+}
 
 const resetFilter = () => {
+  searchInput.value = ''
+  dateInput.value = ''
   searchQuery.value = ''
-  dateFilter.value = ''
+  dateQuery.value = ''
+  refetchData()
 }
 
 // API
-const { data: orderData, isLoading: orderLoading, error: orderError } = useOrder()
+const {
+  data: orderData,
+  isLoading: orderLoading,
+  error: orderError,
+  refetch: refetchData,
+} = useOrder(searchQuery, dateQuery)
 
 // Modals
 const showDeletionModal = ref(false)
@@ -42,14 +69,19 @@ const openDeleteModal = (order: Order) => {
     <div class="flex flex-row items-center gap-4">
       <input
         type="text"
-        v-model="searchQuery"
+        v-model="searchInput"
         placeholder="Search by order number or customer name"
         class="border p-2 rounded w-sm"
       />
-      <VueDatePicker class="max-w-80" v-model="dateFilter" :enable-time-picker="false" />
-      <button class="bg-blue-500 text-white px-10 py-2 rounded">Filter</button>
+      <VueDatePicker
+        class="max-w-80"
+        v-model="dateInput"
+        :enable-time-picker="false"
+        @update:model-value="handleDateChange"
+      />
+      <button class="bg-blue-500 text-white px-10 py-2 rounded" @click="applyFilter">Filter</button>
       <button
-        v-if="searchQuery"
+        v-if="searchQuery || dateQuery"
         class="bg-red-500 text-white px-10 py-2 rounded"
         @click="resetFilter"
       >

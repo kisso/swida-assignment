@@ -2,11 +2,11 @@ import api from '@/api/common.ts'
 import type { PaginationResponse, SingleResponse } from '@/api/responses.ts'
 import type { Order, OrderDTO } from '@/pages/Order/data/models.ts'
 
-export const listOrders = async (): Promise<Order[]> => {
+export const listOrders = async (search: string | null, date: string | null): Promise<Order[]> => {
   const response = await api.get<PaginationResponse<Order>>('/orders', {
     params: {
-      // customer_name: search,
-      // created_at: date,
+      text_query: search || undefined,
+      date: date || undefined,
     },
   })
 
