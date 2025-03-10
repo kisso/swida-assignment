@@ -43,7 +43,7 @@ python manage.py runserver  # Run server
 ```sh
 cd frontend
 npm install  # Install dependencies
-cp .env.example .env
+cp .env.example .env # Create .env file
 npm run dev  # Start development server
 ```
 
