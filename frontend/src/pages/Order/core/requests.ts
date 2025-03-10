@@ -5,6 +5,7 @@ import type { Order, OrderDTO, Waypoint, WaypointDTO } from '@/pages/Order/data/
 export const listOrders = async (search: string | null, date: string | null): Promise<Order[]> => {
   const response = await api.get<PaginationResponse<Order>>('/orders', {
     params: {
+      limit: 1000,
       text_query: search || undefined,
       date: date || undefined,
     },
