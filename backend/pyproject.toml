@@ -11,6 +11,7 @@ django = "^5.1.7"
 django_api_forms = "1.0.0rc9"
 pydantic = "^2.9"
 django-filter = "^25.1"
+django-cors-headers = "^4.7.0"
 
 [tool.poetry.dev-dependencies]
 black = "^25.1.0"
