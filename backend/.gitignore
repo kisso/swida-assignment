@@ -17,3 +17,4 @@ node_modules/
 *.xd
 ~*.docx
 data/
+db.sqlite3
